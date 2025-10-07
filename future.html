@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AVA COOL UI</title>
+  <style>
+/*
+the body,
+no margins,
+arial font for now
+blue background
+rounded edges
+*/
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #e6edf5;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      max-width: 1200px;
+      width: 100%;
+      background: #c7dbf7;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    /*
+    menu at the top - hence sticky
+    turning lighter on hover below
+    */
+    .top-menu {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      background: #1e3a8a;
+      color: #fff;
+      padding: 12px;
+      justify-content: space-around;
+      font-weight: bold;
+    }
+    .top-menu button {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .top-menu button:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .main {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+    .left-menu, .right-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .left-menu button, .right-menu button {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .left-menu button:hover, .right-menu button:hover {
+      background: #1d4ed8;
+    }
+    /*
+    flex means it takes up all the space it can
+    */
+    .chat-box {
+      flex: 1;
+      background: #f0f4ff;
+      border: 2px solid #2563eb;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px;
+    }
+    .chat-messages {
+      flex: 1;
+      margin-bottom: 12px;
+      overflow-y: auto;
+      max-height: 400px;
+    }
+    .message {
+      background: #dbeafe;
+      border: 1px solid #2563eb;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #1e3a8a;
+    }
+    .chat-input {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 8px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+    }
+    .chat-input button {
+      background: #2563eb;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .next-lesson {
+      background: #93c5fd;
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-menu">
+      <button>CALENDAR/TIMETABLES</button>
+      <button>FUTUREMIND SETTING</button>
+      <button>PREPARE FOR EXAMS</button>
+      <button>REVISION RESOURCES</button>
+      <button>REVISION WEBSITES</button>
+    </div>
+    <div class="main">
+      <div class="left-menu">
+        <button>BUTTON</button>
+        <button>BUTTON</button>
+        <button>button</button>
+        <button>button</button>
+        <button>button</button>
+        <button>button</button>
+        <button>button</button>
+        <button>ANOTHER BUTTON</button>
+      </div>
+      <div class="chat-box">
+        <div class="chat-messages" id="chatMessages">
+          <div class="message">CHATBOT MESSAGE</div>
+        </div>
+        <div class="chat-input">
+          <input type="text" id="userInput" placeholder="Ask anything..." />
+          <button onclick="sendMessage()">➤</button>
+        </div>
+      </div>
+      <div class="right-menu">
+        <div class="next-lesson">NEXT LESSON:<br>COMPUTING</div>
+        <button>ATTENDANCE RECORDS</button>
+        <button>MINI MAP</button>
+        <button>MUSIC LESSONS</button>
+        <button>MY REPORTS</button>
+        <button>OLIVER</button>
+        <button>SPORT FIXTURES</button>
+        <button>SOCS</button>
+        <button>SUBJECT SITES</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
