@@ -1,0 +1,61 @@
+<Card size="sm">
+  <Col gap={2}>
+    <Row>
+      <Icon name="calendar" size="lg" />
+      <Title value={title} size="sm" />
+      <Spacer />
+      <Caption value={displayDate} />
+    </Row>
+    <Row>
+      <DatePicker name="timetable.date" defaultValue={selectedDate} variant="ghost" onChangeAction={{ type: "timetable.changeDate", payload: { date: selectedDate } }} />
+    </Row>
+  </Col>
+  <Divider flush />
+  <ListView>
+    {items.length > 0 ? (
+      items.map((item) => (
+        <ListViewItem key={item.id} gap={3} onClickAction={{ type: "timetable.open", payload: { id: item.id } }}>
+          <Box background={item.accent} radius="full" width={3} />
+          <Col gap={0}>
+            <Text value={item.title} size="sm" weight="semibold" maxLines={1} />
+            <Caption value={`${item.time} • ${item.location}`} />
+          </Col>
+        </ListViewItem>
+      ))
+    ) : (
+      <ListViewItem key="empty" gap={2}>
+        <Icon name="info" size="sm" />
+        <Text value="No events for this day" size="sm" color="secondary" />
+      </ListViewItem>
+    )}
+  </ListView>
+</Card>
+
+{
+  title: 'My timetable',
+  selectedDate: '2025-10-07',
+  displayDate: 'Tue, Oct 7',
+  items: [
+    {
+      id: 'evt-901',
+      title: 'Daily stand‑up',
+      time: '9:00–9:15 AM',
+      location: 'Zoom',
+      accent: 'blue',
+    },
+    {
+      id: 'evt-902',
+      title: 'Client sync',
+      time: '11:30 AM–12:15 PM',
+      location: 'Room 3B',
+      accent: 'purple',
+    },
+    {
+      id: 'evt-903',
+      title: 'Project focus block',
+      time: '2:00–3:30 PM',
+      location: 'Desk',
+      accent: 'orange',
+    },
+  ],
+}
